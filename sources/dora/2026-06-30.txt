@@ -1,0 +1,75 @@
+Identifier: EU 2022/2554
+Title: Digital operational resilience for the financial sector (DORA)
+Version: 2026-06-30
+Source: illustrative reconstruction — see README
+
+CHAPTER II ICT risk management
+
+Article 5 Governance and organisation
+1. Financial entities shall have in place an internal governance and control framework that ensures an effective and prudent management of ICT risk, in order to achieve a high level of digital operational resilience.
+2. The management body of the financial entity shall define, approve, oversee and be responsible for the implementation of all arrangements related to the ICT risk management framework.
+3. Members of the management body shall actively keep up to date with sufficient knowledge and skills to understand and assess ICT risk and its impact on the operations of the financial entity, and shall record the training undertaken for that purpose at least once a year.
+
+Article 6 ICT risk management framework
+1. Financial entities shall have a sound, comprehensive and well-documented ICT risk management framework as part of their overall risk management system.
+2. The ICT risk management framework shall be documented and reviewed at least twice a year, as well as upon the occurrence of major ICT-related incidents.
+3. Financial entities shall minimise the impact of ICT risk by deploying appropriate strategies, policies, procedures, ICT protocols and tools.
+4. Financial entities shall assign the responsibility for managing and overseeing ICT risk to a control function and ensure an appropriate level of independence of such control function in order to avoid conflicts of interest.
+5. Financial entities shall ensure that the control function referred to in paragraph 4 reports directly to the management body and shall document any instance in which its advice was not followed.
+
+Article 8 Identification
+1. Financial entities shall identify, classify and adequately document all ICT supported business functions, roles and responsibilities, the information assets and ICT assets supporting those functions, and their roles and dependencies in relation to ICT risk.
+2. Financial entities shall on a continuous basis identify all sources of ICT risk, and assess cyber threats and ICT vulnerabilities relevant to their ICT supported business functions.
+3. Financial entities shall perform a risk assessment upon each major change in the network and information system infrastructure.
+
+Article 9 Protection and prevention
+1. For the purposes of adequately protecting ICT systems, financial entities shall continuously monitor and control the security and functioning of ICT systems and tools.
+2. Financial entities shall design, procure and implement ICT security policies, procedures, protocols and tools that aim to ensure the resilience, continuity and availability of ICT systems.
+3. Financial entities shall implement policies that limit the physical or logical access to information assets and ICT assets to what is required for legitimate and approved functions and activities only, and shall review those access rights at least once every six months.
+4. Financial entities shall implement strong authentication mechanisms based on relevant standards and dedicated control systems.
+
+CHAPTER III ICT-related incident management
+
+Article 17 ICT-related incident management process
+1. Financial entities shall define, establish and implement an ICT-related incident management process to detect, manage and notify ICT-related incidents.
+2. Financial entities shall record all ICT-related incidents and significant cyber threats.
+3. The ICT-related incident management process shall:
+(a) put in place early warning indicators;
+(b) establish procedures to identify, track, log, categorise and classify ICT-related incidents according to their priority and severity;
+(c) assign roles and responsibilities that need to be activated for different ICT-related incident types and scenarios;
+(d) establish a procedure for notifying the management body of any incident classified as major within 2 hours of classification;
+(e) set out plans for communication to staff, external stakeholders and media.
+
+Article 19 Reporting of major ICT-related incidents
+1. Financial entities shall report major ICT-related incidents to the relevant competent authority.
+2. Financial entities shall submit an initial notification within 2 hours of classifying the incident as major.
+3. Financial entities shall submit an intermediate report within 72 hours of the initial notification.
+4. Financial entities shall submit a final report no later than one month after the intermediate report.
+5. Where a major ICT-related incident affects clients, financial entities shall inform those clients without undue delay and shall report to the competent authority on the measures taken to mitigate the effects.
+
+CHAPTER IV Digital operational resilience testing
+
+Article 24 General requirements for the performance of digital operational resilience testing
+1. Financial entities shall establish, maintain and review a sound and comprehensive digital operational resilience testing programme.
+2. The digital operational resilience testing programme shall provide for the execution of a full range of appropriate tests.
+
+Article 25 Testing of ICT tools and systems
+1. Financial entities shall perform vulnerability assessments and scans at least twice a year on all ICT systems supporting critical or important functions.
+2. Financial entities shall perform source code reviews where feasible.
+3. Financial entities shall maintain evidence of the remediation of every vulnerability rated critical or high, and shall record the date on which remediation was completed.
+
+CHAPTER V Managing of ICT third-party risk
+
+Article 28 General principles
+1. Financial entities shall manage ICT third-party risk as an integral component of ICT risk within their ICT risk management framework.
+2. Financial entities shall maintain and update a register of information in relation to all contractual arrangements on the use of ICT services provided by ICT third-party service providers.
+3. Financial entities shall report at least yearly to the competent authorities on the number of new arrangements on the use of ICT services.
+4. Financial entities shall identify, for each contractual arrangement, whether it supports a critical or important function and shall record that determination in the register of information.
+
+Article 30 Key contractual provisions
+1. The rights and obligations of the financial entity and of the ICT third-party service provider shall be clearly allocated and set out in writing.
+2. The contractual arrangements shall include at least the following:
+(a) a clear and complete description of all functions and ICT services to be provided, including whether subcontracting of a critical or important function is permitted;
+(b) the locations where the contracted or subcontracted functions and ICT services are to be provided;
+(c) provisions on availability, authenticity, integrity and confidentiality in relation to the protection of data;
+(d) provisions on ensuring access, recovery and return in an easily accessible format of personal and non-personal data processed by the financial entity.

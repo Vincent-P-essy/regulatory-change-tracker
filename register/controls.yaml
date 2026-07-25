@@ -1,0 +1,180 @@
+# Internal control register.
+#
+# Each control names the provisions it exists to satisfy. The mapping is
+# explicit rather than inferred: keyword matching between regulatory text and
+# control descriptions demos well and fails in the direction that costs the
+# most — silently missing the control nobody wrote in the regulator's
+# vocabulary. An unmapped provision shows up in `regwatch coverage`; a control
+# a fuzzy matcher failed to surface is invisible until an examination.
+
+controls:
+  - id: ICT-GOV-01
+    title: ICT risk management framework, owned and approved by the board
+    owner: Head of Operational Risk
+    instrument: EU 2022/2554
+    provisions: ["Article 5(1)", "Article 5(2)", "Article 6(1)"]
+    last_reviewed: 2026-02-11
+    description: >
+      Annual board approval of the ICT risk management framework, minuted, with
+      the framework document under version control.
+    evidence: Board pack Feb 2026, framework v4.2
+
+  - id: ICT-GOV-02
+    title: Management body ICT competence
+    owner: Company Secretary
+    instrument: EU 2022/2554
+    provisions: ["Article 5(3)"]
+    last_reviewed: 2025-03-04
+    description: >
+      Board members complete ICT risk training. Attendance tracked centrally.
+    evidence: Training register
+
+  - id: ICT-GOV-03
+    title: Independent ICT risk control function
+    owner: Head of Operational Risk
+    instrument: EU 2022/2554
+    provisions: ["Article 6(4)"]
+    last_reviewed: 2026-01-20
+    description: >
+      Second-line ICT risk function reporting outside the CIO chain.
+    evidence: Org chart, function charter
+
+  - id: ICT-GOV-04
+    title: Annual review of the ICT risk framework
+    owner: Head of Operational Risk
+    instrument: EU 2022/2554
+    provisions: ["Article 6(2)"]
+    last_reviewed: 2026-02-11
+    description: >
+      Framework reviewed once a year and after every major incident.
+    evidence: Review log
+
+  - id: ICT-ASSET-01
+    title: ICT asset and business function inventory
+    owner: Head of IT Service Management
+    instrument: EU 2022/2554
+    provisions: ["Article 8(1)", "Article 8(2)"]
+    last_reviewed: 2026-04-30
+    description: >
+      CMDB records every ICT asset and the business functions it supports.
+    evidence: CMDB export, quarterly reconciliation
+
+  - id: ICT-ASSET-02
+    title: Risk assessment on major infrastructure change
+    owner: Change Advisory Board
+    instrument: EU 2022/2554
+    provisions: ["Article 8(3)"]
+    last_reviewed: 2026-05-18
+    description: >
+      Major changes require a documented ICT risk assessment before approval.
+    evidence: CAB minutes
+
+  - id: ICT-ACCESS-01
+    title: Least-privilege access to information and ICT assets
+    owner: Head of Identity and Access Management
+    instrument: EU 2022/2554
+    provisions: ["Article 9(3)"]
+    last_reviewed: 2025-06-02
+    description: >
+      Access granted on approved business need. Joiner-mover-leaver process
+      enforced through the IAM platform.
+    evidence: IAM policy, JML tickets
+
+  - id: ICT-ACCESS-02
+    title: Strong authentication
+    owner: Head of Identity and Access Management
+    instrument: EU 2022/2554
+    provisions: ["Article 9(4)"]
+    last_reviewed: 2026-03-12
+    description: >
+      Phishing-resistant MFA on all remote and privileged access.
+    evidence: MFA coverage report
+
+  - id: ICT-MON-01
+    title: Continuous monitoring of ICT systems
+    owner: Head of Security Operations
+    instrument: EU 2022/2554
+    provisions: ["Article 9(1)"]
+    last_reviewed: 2026-05-05
+    description: >
+      SOC monitoring with documented coverage of critical systems.
+    evidence: SIEM coverage matrix
+
+  - id: ICT-INC-01
+    title: ICT incident management process
+    owner: Head of Security Operations
+    instrument: EU 2022/2554
+    provisions: ["Article 17(1)", "Article 17(2)", "Article 17(3)"]
+    last_reviewed: 2026-06-01
+    description: >
+      Documented process covering detection, classification, escalation and
+      communication, exercised twice a year.
+    evidence: IR runbook, exercise reports
+
+  - id: ICT-INC-02
+    title: Regulatory incident reporting within the deadlines
+    owner: Head of Regulatory Reporting
+    instrument: EU 2022/2554
+    provisions: ["Article 19(1)", "Article 19(2)", "Article 19(3)", "Article 19(4)"]
+    last_reviewed: 2026-06-01
+    description: >
+      Initial, intermediate and final reports to the competent authority,
+      with the clock started at classification and tracked in the case system.
+    evidence: Reporting SOP, case system timestamps
+
+  - id: ICT-INC-03
+    title: Incident communications plan
+    owner: Head of Corporate Communications
+    instrument: EU 2022/2554
+    # Cites Article 17(4). There is no Article 17(4) — the communications
+    # requirement is a point under 17(3). A mis-citation like this survives in a
+    # register for years because nothing reads it, and it reads as compliance.
+    provisions: ["Article 17(4)"]
+    last_reviewed: 2026-03-20
+    description: >
+      Pre-approved holding statements and an escalation path to Communications
+      for incidents with client or media exposure.
+    evidence: Comms playbook
+
+  - id: ICT-TEST-01
+    title: Digital operational resilience testing programme
+    owner: Head of Technology Assurance
+    instrument: EU 2022/2554
+    provisions: ["Article 24(1)", "Article 24(2)"]
+    last_reviewed: 2026-04-14
+    description: >
+      Annual testing plan covering the full range of required test types.
+    evidence: Testing programme 2026
+
+  - id: ICT-TEST-02
+    title: Vulnerability assessment and scanning
+    owner: Head of Technology Assurance
+    instrument: EU 2022/2554
+    provisions: ["Article 25(1)"]
+    last_reviewed: 2026-04-14
+    description: >
+      Authenticated scanning of all systems supporting critical or important
+      functions, once a year, with results tracked to closure.
+    evidence: Scan schedule, remediation tracker
+
+  - id: ICT-TPP-01
+    title: ICT third-party register of information
+    owner: Head of Third-Party Risk
+    instrument: EU 2022/2554
+    provisions: ["Article 28(2)", "Article 28(3)"]
+    last_reviewed: 2026-05-27
+    description: >
+      Register of every contractual arrangement for ICT services, reconciled
+      against accounts payable quarterly.
+    evidence: Register export, reconciliation
+
+  - id: ICT-TPP-02
+    title: Contractual provisions for ICT service providers
+    owner: TBC
+    instrument: EU 2022/2554
+    provisions: ["Article 30(1)", "Article 30(2)"]
+    last_reviewed: 2025-01-15
+    description: >
+      Standard clause set covering description of services, locations, data
+      protection and exit. Applied at contracting and at renewal.
+    evidence: Clause library v3
