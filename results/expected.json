@@ -1,0 +1,100 @@
+{
+  "instrument": "EU 2022/2554",
+  "versions": [
+    "2023-01-16",
+    "2026-06-30"
+  ],
+  "provisions": {
+    "before": 52,
+    "after": 57
+  },
+  "diff": {
+    "changes": 12,
+    "unchanged": 31,
+    "by_materiality": {
+      "obligation": 10,
+      "substantive": 1,
+      "editorial": 1,
+      "unknown": 0
+    },
+    "by_type": {
+      "added": 5,
+      "removed": 0,
+      "modified": 6,
+      "renumbered": 1
+    },
+    "material_paths": [
+      "Article 17(3)(d)",
+      "Article 19(2)",
+      "Article 19(5)",
+      "Article 25(1)",
+      "Article 25(3)",
+      "Article 28(4)",
+      "Article 30(2)(a)",
+      "Article 5(3)",
+      "Article 6(2)",
+      "Article 6(5)",
+      "Article 9(3)"
+    ],
+    "renumbered": [
+      "Article 17(3)(d) -> Article 17(3)(e)"
+    ]
+  },
+  "impact": {
+    "controls": 16,
+    "needing_review": [
+      "ICT-ACCESS-01",
+      "ICT-GOV-02",
+      "ICT-GOV-04",
+      "ICT-INC-01",
+      "ICT-INC-02",
+      "ICT-TEST-02",
+      "ICT-TPP-02"
+    ],
+    "unmapped_material": [
+      "Article 19(5)",
+      "Article 25(3)",
+      "Article 28(4)",
+      "Article 6(5)"
+    ],
+    "owners": {
+      "Company Secretary": [
+        "ICT-GOV-02"
+      ],
+      "Head of Identity and Access Management": [
+        "ICT-ACCESS-01"
+      ],
+      "Head of Operational Risk": [
+        "ICT-GOV-04"
+      ],
+      "Head of Regulatory Reporting": [
+        "ICT-INC-02"
+      ],
+      "Head of Security Operations": [
+        "ICT-INC-01"
+      ],
+      "Head of Technology Assurance": [
+        "ICT-TEST-02"
+      ],
+      "TBC": [
+        "ICT-TPP-02"
+      ]
+    }
+  },
+  "coverage": {
+    "provisions": 43,
+    "covered": 35,
+    "coverage": 0.814,
+    "dangling": [
+      "ICT-INC-03:Article 17(4)"
+    ],
+    "unowned": [
+      "ICT-TPP-02"
+    ],
+    "stale_365": [
+      "ICT-ACCESS-01",
+      "ICT-GOV-02",
+      "ICT-TPP-02"
+    ]
+  }
+}
