@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: python -m pytest -q
+
+  prove-the-claim:
+    # The README publishes exact figures. This job re-derives them and fails if
+    # any moved, so the numbers cannot rot.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+
+      - name: Re-derive every published figure
+        run: python scripts/reproduce.py
+
+      - name: The committed digest matches what the tool produces
+        run: |
+          regwatch digest sources/dora/2023-01-16.txt sources/dora/2026-06-30.txt \
+            --register register/controls.yaml --out /tmp/digest.md
+          diff -u docs/digest-2026-06-30.md /tmp/digest.md
+
+      - name: An inserted list point is one addition and one renumbering
+        run: |
+          python - <<'PY'
+          from regwatch.diff import ChangeType, diff
+          from regwatch.document import load
+
+          result = diff(
+              load("sources/dora/2023-01-16.txt"),
+              load("sources/dora/2026-06-30.txt"),
+          )
+          kinds = {(c.change_type, c.path) for c in result.changes}
+          assert (ChangeType.ADDED, "Article 17(3)(d)") in kinds, sorted(kinds)
+          assert (ChangeType.RENUMBERED, "Article 17(3)(e)") in kinds, sorted(kinds)
+
+          # Matching paths first would have produced a MODIFIED at 17(3)(d)
+          # and an ADDED at 17(3)(e). Both are false; assert neither appears.
+          assert (ChangeType.MODIFIED, "Article 17(3)(d)") not in kinds
+          assert (ChangeType.ADDED, "Article 17(3)(e)") not in kinds
+          print("insertion handled as 1 addition + 1 renumbering")
+          PY
+
+      - name: A frequency written in words is graded as an obligation
+        run: |
+          python - <<'PY'
+          from regwatch.diff import ChangeType, Materiality, classify
+
+          materiality, reasons = classify(
+              "Systems shall be scanned at least once a year.",
+              "Systems shall be scanned at least twice a year.",
+              ChangeType.MODIFIED,
+          )
+          assert materiality is Materiality.OBLIGATION, materiality
+          assert "once" in reasons[0] and "twice" in reasons[0], reasons
+          print(f"caught: {reasons[0]}")
+          PY
+
+      - name: A list point inherits the binding verb from its chapeau
+        run: |
+          python - <<'PY'
+          from regwatch.diff import ChangeType, Materiality, classify
+
+          materiality, reasons = classify(
+              "", "notify the management body of the incident;",
+              ChangeType.ADDED, chapeau="The process shall:",
+          )
+          assert materiality is Materiality.OBLIGATION, materiality
+          print(f"caught: {reasons[0]}")
+          PY
+
+      - name: The register's mis-citation is reported as dangling
+        run: |
+          regwatch --today 2026-07-25 coverage sources/dora/2026-06-30.txt \
+            --register register/controls.yaml --quiet --json /tmp/coverage.json
+          python - <<'PY'
+          import json
+          report = json.load(open("/tmp/coverage.json"))
+          dangling = {(d["control"], d["provision"]) for d in report["dangling"]}
+          assert ("ICT-INC-03", "Article 17(4)") in dangling, dangling
+          assert report["covered"] == 35 and report["provisions"] == 43, report
+          assert report["unowned"] == ["ICT-TPP-02"], report["unowned"]
+          print(f"coverage {report['coverage']:.0%}, {len(dangling)} dangling citation(s)")
+          PY
+
+      - name: Four material changes map to no control
+        run: |
+          regwatch --today 2026-07-25 impact sources/dora/2023-01-16.txt \
+            sources/dora/2026-06-30.txt --register register/controls.yaml \
+            --json /tmp/impact.json
+          python - <<'PY'
+          import json
+          report = json.load(open("/tmp/impact.json"))
+          unmapped = {c["path"] for c in report["unmapped"]}
+          assert unmapped == {
+              "Article 6(5)", "Article 19(5)", "Article 25(3)", "Article 28(4)"
+          }, unmapped
+          assert report["controls_needing_review"] == 7, report
+          print(f"{len(unmapped)} material change(s) claimed by no control")
+          PY
