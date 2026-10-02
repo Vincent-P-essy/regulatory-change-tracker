@@ -1,0 +1,31 @@
+$ regwatch diff sources/dora/2023-01-16.txt sources/dora/2026-06-30.txt
+╭────────────── regwatch diff ──────────────╮
+│ EU 2022/2554                              │
+│ 2023-01-16 → 2026-06-30                   │
+│ 12 changes, 31 provisions untouched       │
+│ 10 obligation  1 substantive  1 editorial │
+╰───────────────────────────────────────────╯
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ provision        ┃ change   ┃ materiality ┃ why                                                  ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Article 17(3)(d) │ added    │ obligation  │ new item in a list governed by shall: “The           │
+│                  │          │             │ ICT-related incident management process shall:”      │
+│ Article 19(5)    │ added    │ obligation  │ new provision containing 2 binding term(s): shall    │
+│ Article 25(3)    │ added    │ obligation  │ new provision containing 2 binding term(s): shall    │
+│ Article 28(4)    │ added    │ obligation  │ new provision containing 2 binding term(s): shall    │
+│ Article 6(5)     │ added    │ obligation  │ new provision containing 2 binding term(s): shall    │
+│ Article 19(2)    │ modified │ obligation  │ quantity changed: 4 hours → 2 hours                  │
+│ Article 25(1)    │ modified │ obligation  │ frequency changed: once → twice                      │
+│ Article 5(3)     │ modified │ obligation  │ binding terms increased from 1 to 2; frequency       │
+│                  │          │             │ introduced: once                                     │
+│ Article 6(2)     │ modified │ obligation  │ frequency changed: once → twice                      │
+│ Article 9(3)     │ modified │ obligation  │ binding terms increased from 1 to 2; frequency       │
+│                  │          │             │ introduced: once                                     │
+│ Article 30(2)(a) │ modified │ substantive │ wording changed; 66% of the text is identical        │
+└──────────────────┴──────────┴─────────────┴──────────────────────────────────────────────────────┘
+
+1 editorial change(s) hidden — renumberings and wording. Pass --all to see them.
+1 provision(s) kept their text and changed address. A line diff would have reported these as 
+deletions plus additions, and everything below them as modified.
+
+Exit: 0
