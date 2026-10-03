@@ -20,12 +20,6 @@ regwatch impact sources/dora/2023-01-16.txt sources/dora/2026-06-30.txt \
 
 ---
 
-## Execution preview
-
-![regulatory-change-tracker execution](docs/screenshots/execution.png)
-
-Local execution of `regwatch diff sources/dora/2023-01-16.txt sources/dora/2026-06-30.txt`. The input and output shown come from the repository example or test fixtures. [Verification](docs/verification.md).
-
 ## Why a line diff is useless here
 
 A regulation is a numbered hierarchy, and every reference anyone will ever make
